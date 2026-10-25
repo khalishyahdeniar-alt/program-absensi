@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+/* Enumerasi status absensi */
+enum StatusAbsensi {
+    HADIR = 1,
+    IZIN,
+    SAKIT,
+    ALPA
+};
+
+int main() {
+    int nomorAbsen;
+    int pilihan;
+    enum StatusAbsensi status;
+
+    printf("=== PROGRAM ABSENSI ===\n");
+    printf("Masukkan nomor absen: ");
+    scanf("%d", &nomorAbsen);
+
+    printf("\nPilih status kehadiran:\n");
+    printf("1. Hadir\n");
+    printf("2. Izin\n");
+    printf("3. Sakit\n");
+    printf("4. Alpa\n");
+    printf("Pilihan (1-4): ");
+    scanf("%d", &pilihan);
+
+    status = pilihan;
+
+    printf("\nNomor absen : %d\n", nomorAbsen);
+
+    switch (status) {
+        case HADIR:
+            printf("Status      : Hadir\n");
+            printf("Keterangan  : Mahasiswa hadir di kelas\n");
+            break;
+
+        case IZIN:
+            printf("Status      : Izin\n");
+            printf("Keterangan  : Mahasiswa tidak hadir dengan izin\n");
+            break;
+
+        case SAKIT:
+            printf("Status      : Sakit\n");
+            printf("Keterangan  : Mahasiswa tidak hadir karena sakit\n");
+            break;
+
+        case ALPA:
+            printf("Status      : Alpa\n");
+            printf("Keterangan  : Mahasiswa tidak hadir tanpa keterangan\n");
+            break;
+
+        default:
+            printf("Status tidak valid\n");
+            break;
+    }
+
+    return 0;
+}
